@@ -47,7 +47,7 @@
 # python3 hamiltonProblem.py
 # 
 # ===== Begin code area ========================================================================================================
-
+    
 def find_starting_city(distances, gas, mpg):
     # Getting the length first so we don't need to keep calling it after
     # every iteration
