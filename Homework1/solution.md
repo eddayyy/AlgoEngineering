@@ -55,7 +55,7 @@ Q1:
 #   Output: A "quotient" variable of type int that represents the division without the remainder
 #           The return value 
     def long_division(num, denom):
-
+        
 
 
 
