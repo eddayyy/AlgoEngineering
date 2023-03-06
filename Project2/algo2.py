@@ -3,7 +3,7 @@
 def run_encoding(S):
     n = len(S)  
     i = 0
-    while i < n - 1:
+    while i < n:
         count = 1
         while i < n - 1 and S[i] == S[i+1]:
             count += 1
@@ -14,6 +14,6 @@ def run_encoding(S):
         else:
             print(str(count) + S[i - 1], end="")
             
-x = "heloooooooo there"
+x = "choosemeeky and tuition-free"
 run_encoding(x)
 print()
