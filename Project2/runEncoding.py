@@ -1,5 +1,4 @@
 
-
 def run_encoding(S):
     n = len(S)  
     i = 0
