@@ -1,3 +1,8 @@
+# Authors: Eduardo Nunez | Juan Gonzalez
+# Authors email: eduardonunez@csu.fullerton.edu 
+#                gonzalez.juanant524@csu.fullerton.edu
+
+
 def run_encoding(S):
     n = len(S)  # Get the length of the input string
     i = 0  # Initialize a counter for the current character index in the string

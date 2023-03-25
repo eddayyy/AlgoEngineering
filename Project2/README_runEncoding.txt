@@ -1,4 +1,4 @@
-Merging Techniques in Python
+Run Encoding in Python
 These are the steps to execute the program
 1. Download runEncoding.py
 2. Ensure that python3 is installed

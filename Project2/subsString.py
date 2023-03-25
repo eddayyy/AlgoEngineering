@@ -1,5 +1,6 @@
-# Author: Eduardo Nunez
-# Author email: 
+# Authors: Eduardo Nunez | Juan Gonzalez
+# Authors email: eduardonunez@csu.fullerton.edu 
+#                gonzalez.juanant524@csu.fullerton.edu
 # Import the json module for loading data from a file
 import json
 

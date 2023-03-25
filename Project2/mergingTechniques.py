@@ -1,3 +1,7 @@
+# Authors: Eduardo Nunez | Juan Gonzalez
+# Authors email: eduardonunez@csu.fullerton.edu 
+#                gonzalez.juanant524@csu.fullerton.edu
+
 import json # Import the json module for loading data from a file
 import heapq # Import the heapq module for heap operations (not used in this code)
 
