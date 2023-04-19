@@ -3,7 +3,7 @@
 import random
 import time
 
-# ============= SOCCEER ALGORITHM =============
+# ============= SOCCEER ALGORITHM O(n * 2^n) =============
 def is_valid(candidate, field):
     rows, cols = len(field), len(field[0])
     row, col = 0, 0

@@ -3,7 +3,7 @@
 import time
 import random
 
-# ============= SOCCEER ALGORITHM =============
+# ============= SOCCEER ALGORITHM O(n^2) =============
 def soccer_dyn_prog(F):
     r = len(F)
     c = len(F[0])

@@ -1,8 +1,5 @@
-Authors: Eduardo Nunez
-         Juan Gonzalez
-
-Authors emails: eduardonunez@csu.fullerton.edu 
-                gonzalez.juanant524@csu.fullerton.edu 
+Authors: Eduardo Nunez | eduardonunez@csu.fullerton.edu 
+         Juan Gonzalez | gonzalez.juanant524@csu.fullerton.edu          
 
 How to Run the Soccer Avoidance Algorithms: 
     Dynamic Programming Solution:
@@ -19,6 +16,6 @@ How to Run the Soccer Avoidance Algorithms:
         3. Type "python3 soccerESTime.py" 
         4. You are done!
 
-    NOTE: In both files you can run the example input given in the PDF file by commenting out the for loop and uncommenting
-          the line that defines the grid variable and calls the soccer algorithm. 
+NOTE: In both files you can run the example input given in the PDF file by commenting out the for loop and uncommenting
+      the line that defines the grid variable and calls the soccer algorithm. 
 
