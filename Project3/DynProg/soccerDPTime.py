@@ -1,8 +1,7 @@
+# Authors: Eduardo Nunez | Juan Gonzalez
+# Authors emails: eduardonunez@csu.fullerton.edu | gonzalez.juanant524@csu.fullerton.edu 
 import time
 import random
-import numpy as np  
-import matplotlib.pyplot as plt
-
 
 # ============= SOCCEER ALGORITHM =============
 def soccer_dyn_prog(F):
@@ -29,7 +28,7 @@ def soccer_dyn_prog(F):
 
 # ============= RANDOM GRID =============
 def create_random_grid(n):
-    grid = [['.' for _ in range(n)] for _ in range(n)]
+    grid = [['.' for _ in range(n)] for _ in range(n)]  # Create an empty n x n grid filled with '.'
 
     for i in range(n):
         for j in range(n):
@@ -43,34 +42,38 @@ def create_random_grid(n):
 
 # ============= MAIN IMPLEMENTATION =============
 def main():
-    ns = [2000, 3000, 4000]  # Varying sizes of n
+    ns = [2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] # Varying sizes of n
     timings = []
 
     for n in ns:
         grid = create_random_grid(n)
-        
+
         start_time = time.time()
         num_paths = soccer_dyn_prog(grid)
         end_time = time.time()
 
-        runtime = end_time - start_time  # Calculate runtime in seconds
+        runtime = (end_time - start_time)  * 1000 # Calculate runtime in milliseconds
         timings.append(runtime)
 
-        print(f"Size: {n}x{n}, Number of different paths: {num_paths}, Runtime: {runtime:.2f} seconds")  # Output in seconds
-    # Use the ns and timings from the previous code
-    plt.scatter(ns, timings, label="Data Points")
-    plt.xlabel("Grid Size (n)")
-    plt.ylabel("Elapsed Time (seconds)")  # Update ylabel to seconds
-    plt.title("Timing Data for Soccer Dynamic Programming")
-
-    # Fit a line to the data
-    coefficients = np.polyfit(ns, timings, 1)  # 1 means a linear fit
-    fit_line = np.poly1d(coefficients)
-    plt.plot(ns, fit_line(ns), label="Fit Line", color="red")
-    plt.legend()
-    plt.savefig("timing_data_plot.png")
-
-    return ns, timings
+        print(f"Size: {n}x{n}, Number of different paths: {num_paths}, Runtime: {runtime:.2f} ms")
+        
+    # ============= EXAMPLE INPUT IMPLEMENTATION =============
+    #
+    # TO RUN THIS CORRECTLY, COMMENT OUT ALL OTHER LINES IN THE MAIN FUNCTION & UNCOMMENT THE CODE BELOW SECTION
+    #
+    # grid = [
+    #     ['.', '.', '.', '.', '.', '.', 'X', '.', 'X'],
+    #     ['X', '.', '.', '.', '.', '.', '.', '.', '.'],
+    #     ['.', '.', '.', 'X', '.', '.', '.', 'X', '.'],
+    #     ['.', '.', 'X', '.', '.', '.', '.', 'X', '.'],
+    #     ['.', 'X', '.', '.', '.', '.', 'X', '.', '.'],
+    #     ['.', '.', '.', '.', 'X', '.', '.', '.', '.'],
+    #     ['.', '.', 'X', '.', '.', '.', '.', '.', 'X'],
+    #     ['.', '.', '.', '.', '.', '.', '.', '.', '.']
+    # ]
+    
+    # num_paths = soccer_dyn_prog(grid)
+    # print("Number of different paths (exhaustive search):", num_paths)  # Output: 102
 
 if __name__ == "__main__":
-    ns, timings = main()
+    main()

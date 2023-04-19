@@ -1,8 +1,9 @@
-import time
+# Authors: Eduardo Nunez | Juan Gonzalez
+# Authors emails: eduardonunez@csu.fullerton.edu | gonzalez.juanant524@csu.fullerton.edu 
 import random
-import matplotlib.pyplot as plt
-import numpy as np
+import time
 
+# ============= SOCCEER ALGORITHM =============
 def is_valid(candidate, field):
     rows, cols = len(field), len(field[0])
     row, col = 0, 0
@@ -39,6 +40,7 @@ def count_paths_exhaustive(field):
     return counter
 
 
+# ============= RANDOM GRID =============
 def create_random_grid(n):
     grid = [['.' for _ in range(n)] for _ in range(n)]
 
@@ -52,9 +54,9 @@ def create_random_grid(n):
 
     return grid
 
-
+# ============= MAIN IMPLEMENTATION =============
 def main():
-    ns = [10, 12, 14 ]  # Varying sizes of n
+    ns = [2, 4, 5, 6, 7, 8, 9, 10] # Varying sizes of n
     timings = []
 
     for n in ns:
@@ -64,26 +66,28 @@ def main():
         num_paths = count_paths_exhaustive(grid)
         end_time = time.time()
 
-        runtime = end_time - start_time  # Calculate runtime in seconds
+        runtime = (end_time - start_time) * 1000 # Calculate runtime in milliseconds
         timings.append(runtime)
 
-        print(f"Size: {n}x{n}, Number of different paths: {num_paths}, Runtime: {runtime:.2f} s")
+        print(f"Size: {n}x{n}, Number of different paths: {num_paths}, Runtime: {runtime:.2f} ms")
 
-    # Plot the data
-    plt.scatter(ns, timings, label="Data Points")
-    plt.xlabel("Grid Size (n)")
-    plt.ylabel("Elapsed Time (seconds)")  # Update ylabel to seconds
-    plt.title("Timing Data for count_paths_exhaustive")
-
-    # Fit a line to the data
-    coefficients = np.polyfit(ns, timings, 1)  # 1 means a linear fit
-    fit_line = np.poly1d(coefficients)
-    plt.plot(ns, fit_line(ns), label="Fit Line", color="red")
-    plt.legend()
-    plt.savefig("timing_data_plot_exhaustive.png")
-
-    return ns, timings
+    # ============= EXAMPLE INPUT IMPLEMENTATION =============
+    #
+    # TO RUN THIS CORRECTLY, COMMENT OUT ALL OTHER LINES IN THE MAIN FUNCTION & UNCOMMENT THIS SECTION
+    #
+    # grid = [
+    #     ['.', '.', '.', '.', '.', '.', 'X', '.', 'X'],
+    #     ['X', '.', '.', '.', '.', '.', '.', '.', '.'],
+    #     ['.', '.', '.', 'X', '.', '.', '.', 'X', '.'],
+    #     ['.', '.', 'X', '.', '.', '.', '.', 'X', '.'],
+    #     ['.', 'X', '.', '.', '.', '.', 'X', '.', '.'],
+    #     ['.', '.', '.', '.', 'X', '.', '.', '.', '.'],
+    #     ['.', '.', 'X', '.', '.', '.', '.', '.', 'X'],
+    #     ['.', '.', '.', '.', '.', '.', '.', '.', '.']
+    # ]
+    # num_paths = count_paths_exhaustive(grid)
+    # print("Number of different paths (exhaustive search):", num_paths)  # Output: 102
 
 
 if __name__ == "__main__":
-    ns, timings = main()
+    main()
