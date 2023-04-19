@@ -39,7 +39,7 @@ def main():
     end_time = time.time()
 
     print("Number of different paths (dynamic programming):", num_paths)  # Output: 102
-    print("Runtime of the soccer_dyn_prog function:", (end_time - start_time) * 1000, "seconds")
+    print("Runtime of the soccer_dyn_prog function:", (end_time - start_time))
 
 if __name__ == "__main__":
     main()
